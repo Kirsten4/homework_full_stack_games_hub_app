@@ -1,0 +1,40 @@
+1. What is responsible for defining the routes of the games resource?
+    
+    The routes are defined in the create_router.js file using an express Router.
+
+
+2. What do you notice about the folder structure? Whats the client responsible for? Whats the server responsible for?
+
+    The client is responsible for components and containers that will be rendered on the app including a form to receive new data and passing this to the server via GamesService. The server is responsible for listening for requests, connecting to the db and holding the CRUD functionality in the router.
+
+
+3. What are the the responsibilities of server.js?
+
+    Connecting to MongoDB, connecting to 'games_hub' database, creating router and listening for requests.
+
+
+4. What are the responsibilities of the gamesRouter?
+    
+    CRUD functionality (show all, show one, create, delete, update).
+
+
+5. What process does the the client (front-end) use to communicate with the server?
+    
+    GET/POST requests.
+
+
+6. What optional second argument does the fetch method take? And what is it used for in this application? Hint: See Using Fetch on the MDN docs
+
+    An init object with custom settings such as method (POST)and body of request, etc.
+
+
+7. Which of the games API routes does the front-end application consume (i.e. make requests to)?
+    
+    SHOW ALL - router.get('/',...
+    CREATE - router.post('/',...
+    DELETE - router.delete('/:id',...
+
+
+8. What are we using the MongoDB Driver for?
+
+    To ensure data persistence when a new game is added via the form. If the client was restarted any data not in the seed file would be lost.
